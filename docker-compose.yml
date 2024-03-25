@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  dev-finder-db:
+    image: postgres:12
+    restart: always
+    container_name: dev-finder-db
+    ports: 
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: dashdoorcam
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres: 
+
+
