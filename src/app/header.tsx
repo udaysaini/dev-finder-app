@@ -9,7 +9,6 @@ export default function Header() {
     console.log({session})
     return (
         <div>
-          <div><ModeToggle /></div>
           {
             session?.data ? (
                 <Button onClick={() => signOut()} >Sign Out</Button>
@@ -17,6 +16,10 @@ export default function Header() {
                 <Button onClick={() => signIn('google')}>Sign In</Button>
             )
           }
+          {session.data?.user?.email}/
+          {session.data?.user?.name}
+
+          <div><ModeToggle /></div>
         </div>
     )
 }
